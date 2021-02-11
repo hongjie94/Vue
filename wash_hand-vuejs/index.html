@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wash Your Hand(Covid-19)</title>
+    <link rel="icon" href="./img/icon.jpg">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+  <div id="vue-app">
+    <!-- loading -->  
+    <div id="loading" v-show="load"> 
+        <div class="loading_img">
+        </div> 
+        <div class="loader_div">
+            <div class="loader">
+                <h2>Clean Hands Save Lives !</h2>
+                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- images -->
+    <div class="wash_hand_images"  v-show="!load" :class="{killed:ended, a:wash_a, b:wash_b, c:wash_c, d:wash_d, e:wash_e, wash_hand_images:restart }">
+        <!-- virus box -->
+        <div id="virus_box">
+                <div class="w3-light-grey" v-show="!ended" style="border: 1px solid black; border-radius: 2px;" >
+                  <div class="w3-red virus-health"
+                        :style="{width:health +'%'}"  
+                  ></div>
+                </div>
+            <img class="virus" :src="virus" alt="virus">
+        </div>
+    </div>
+     <!-- controls -->
+    <div id="steps" v-show="!load" >
+        <div class="steptext">
+            <p>{{steps}}</p>
+        </div>
+    </div>
+    <!-- controls -->
+    <div id="controls" v-show="!load" >
+        <button @click="reset">Restart</button>
+        <button @click="kills" v-show="!ended && !next">Next</button>
+    </div>    
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
