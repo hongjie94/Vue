@@ -1,2 +1,2 @@
 # Vue
-All My Vue projects
+My Vue projects
