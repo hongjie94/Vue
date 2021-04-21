@@ -1,2 +1,2 @@
 # Vue
-My Vue projects
+Simple Vue js projects 
